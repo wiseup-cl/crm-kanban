@@ -1,0 +1,30 @@
+2025-08-14 11:46:11,259 - root - INFO - Added file handler for /Users/cverdugo/dev/crm-kanban/jentic_ark2_mcp.log
+2025-08-14 11:46:11,259 - root - INFO - Logging configured successfully
+2025-08-14 11:46:11,259 - mcp.main - INFO - Registered 4 tools:
+2025-08-14 11:46:11,259 - mcp.main - INFO -   - search_apis: Search for available actions or information based ...
+2025-08-14 11:46:11,259 - mcp.main - INFO -   - load_execution_info: Get more details about a specific action (like wha...
+2025-08-14 11:46:11,259 - mcp.main - INFO -   - execute: Perform the chosen action for the user using the p...
+2025-08-14 11:46:11,259 - mcp.main - INFO -   - submit_feedback: Submit feedback to Jentic, detailed error informat...
+2025-08-14 11:46:11,259 - mcp.main - INFO - ARK² MCP Plugin initializing in stdio mode
+2025-08-14 11:46:11,259 - mcp.main - INFO - Log file: /Users/cverdugo/dev/crm-kanban/jentic_ark2_mcp.log
+2025-08-14 11:46:11,259 - mcp.transport.stdio - INFO - StdioTransport initialized with 5 available tools: search_apis, load_execution_info, generate_code_sample, execute, submit_feedback
+2025-08-14 11:46:11,259 - mcp.transport.stdio - INFO - Starting stdio transport
+2025-08-14 11:46:11,260 - mcp.transport.stdio - INFO - Received raw input: {"method":"initialize","params":{"protocolVersion":"2025-06-18","capabilities":{"roots":{}},"clientI...
+2025-08-14 11:46:11,260 - mcp.transport.stdio - INFO - Detected JSON-RPC protocol request
+2025-08-14 11:46:11,260 - mcp.transport.stdio - INFO - Processing JSON-RPC method: initialize, id: 0
+2025-08-14 11:46:11,260 - mcp.transport.stdio - INFO - Handling JSON-RPC initialize request (id: 0)
+2025-08-14 11:46:11,260 - mcp.transport.stdio - INFO - Returning 4 tool definitions in initialize response
+2025-08-14 11:46:11,260 - mcp.transport.stdio - INFO - Sending JSON-RPC response for initialize, id: 0
+2025-08-14 11:46:11,260 - mcp.transport.stdio - INFO - Received raw input: {"method":"notifications/initialized","jsonrpc":"2.0"}
+
+2025-08-14 11:46:11,260 - mcp.transport.stdio - INFO - Detected JSON-RPC protocol request
+2025-08-14 11:46:11,260 - mcp.transport.stdio - INFO - Processing JSON-RPC method: notifications/initialized, id: None
+2025-08-14 11:46:11,260 - mcp.transport.stdio - INFO - Received notification: notifications/initialized
+2025-08-14 11:46:11,260 - mcp.transport.stdio - INFO - Client has completed initialization
+2025-08-14 11:46:11,261 - mcp.transport.stdio - INFO - Received raw input: {"method":"tools/list","jsonrpc":"2.0","id":1}
+
+2025-08-14 11:46:11,261 - mcp.transport.stdio - INFO - Detected JSON-RPC protocol request
+2025-08-14 11:46:11,261 - mcp.transport.stdio - INFO - Processing JSON-RPC method: tools/list, id: 1
+2025-08-14 11:46:11,261 - mcp.transport.stdio - INFO - Handling JSON-RPC tools/list (id: 1)
+2025-08-14 11:46:11,261 - mcp.transport.stdio - INFO - Returning 4 tool definitions in tools/list response
+2025-08-14 11:46:11,261 - mcp.transport.stdio - INFO - Sending JSON-RPC response for tools/list, id: 1

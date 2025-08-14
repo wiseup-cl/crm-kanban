@@ -1,0 +1,66 @@
+# .claudecode - Custom rules for Claude Code
+
+rules:
+  # Clerk Authentication
+  - "Use clerkMiddleware instead of authMiddleware (deprecated)"
+  - "Protect /app routes in middleware as a starting point"
+  - "Replace import { authMiddleware } with import { clerkMiddleware }"
+
+  # Database Operations
+  - "Use Prisma as the ONLY database client"
+  - "NO direct database connections or alternative clients (Supabase client, raw SQL)"
+  - "All database operations MUST go through Prisma client"
+  - "Keep database logic in dedicated service layers under src/services/"
+  - "Use User table 'id' field for referencing users, NOT 'clerkId'"
+  - "Implement error handling for Prisma operations"
+  - "Use Prisma's transaction API for atomic operations"
+  - "Never expose Prisma client on client-side"
+
+  # Components and Structure
+  - "Use 'use client' directive for client-side components"
+  - "Use Tailwind CSS utility classes for breakpoints and responsiveness"
+  - "Use shadcn components where possible for design and style"
+  - "Use lucide-react for icons"
+  - "Convert npx shadcn-ui@latest to npx shadcn@latest init"
+
+  # Git Commits
+  - "End messages with '💾 Don't forget to commit!' when applying changes"
+  - "Mandatory commit prefixes: Feat(), Fix(), Docs(), Refactor(), Style(), Test(), Chore()"
+  - "Format: 'Feat(component): add new component'"
+
+style:
+  - "Maintain file structure with app/, ui/, components/, features/"
+  - "Base shadcn components in /ui"
+  - "Composed reusable components in /components"
+  - "Feature-specific components and logic in /features"
+  - "Page-specific components in _components/ within each route"
+
+constraints:
+  - "NO localStorage, sessionStorage, or browser storage APIs directly"
+  - "NO Supabase client for database operations"
+  - "NO raw SQL execution, only Prisma"
+  - "All DB operations must be server-side (server components or API routes)"
+
+preferences:
+  - "Prisma for all database operations"
+  - "Clerk for auth but sync with DB via Prisma"
+  - "Shadcn UI as primary component system"
+  - "Tailwind CSS for styling"
+  - "Service layer structure in src/services/ for business logic"
+  - "Use Prisma's include/select for efficient queries"
+  - "Implement pagination with Prisma's skip/take"
+
+project_structure:
+  - "src/app/ - Next.js routes and pages"
+  - "src/ui/ - Base shadcn components"
+  - "src/components/ - Composed reusable components"
+  - "src/features/ - Feature-specific components and logic"
+  - "src/services/ - Service layer for business logic"
+  - "src/lib/ - Utilities and configurations (prisma client)"
+  - "docs/ - Project documentation"
+
+documentation:
+  - "Create project management documentation in docs/"
+  - "Organize tasks as: Done, ToDo, Backlog"
+  - "Order completed tasks chronologically"
+  - "Prioritize pending tasks by their order in the list"

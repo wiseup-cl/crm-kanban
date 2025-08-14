@@ -31,9 +31,9 @@ export default function RootLayout({
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <SignedIn>
-            <div className="flex min-h-screen">
+            <div className="flex min-h-screen bg-[#1a1d23]">
               <Sidebar />
-              <main className="flex-1 bg-gray-50">
+              <main className="flex-1">
                 {children}
               </main>
             </div>

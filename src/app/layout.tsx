@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ClerkProvider } from "@clerk/nextjs";
 import Sidebar from "@/components/Sidebar";
 import "./globals.css";
 
@@ -24,17 +25,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <div className="flex min-h-screen">
-          <Sidebar />
-          <main className="flex-1 bg-gray-50">
-            {children}
-          </main>
-        </div>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <div className="flex min-h-screen">
+            <Sidebar />
+            <main className="flex-1 bg-gray-50">
+              {children}
+            </main>
+          </div>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }

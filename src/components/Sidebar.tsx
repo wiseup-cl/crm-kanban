@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { UserButton, SignedIn, SignedOut, SignInButton } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
 
 interface NavItem {
   label: string;
@@ -21,6 +23,7 @@ const navItems: NavItem[] = [
 
 export default function Sidebar() {
   const pathname = usePathname();
+  const { user } = useUser();
 
   return (
     <aside className="w-64 bg-gray-900 text-white min-h-screen p-4 flex flex-col">
@@ -53,15 +56,30 @@ export default function Sidebar() {
       </nav>
 
       <div className="border-t border-gray-700 pt-4 mt-4">
-        <div className="flex items-center gap-3 px-4 py-2">
-          <div className="w-8 h-8 bg-gray-600 rounded-full flex items-center justify-center">
-            <span className="text-sm font-medium">JD</span>
+        <SignedIn>
+          <div className="flex items-center gap-3 px-4 py-2">
+            <UserButton 
+              appearance={{
+                elements: {
+                  userButtonAvatarBox: "w-8 h-8",
+                },
+              }}
+            />
+            <div className="flex-1">
+              <p className="text-sm font-medium">{user?.fullName || user?.firstName || "User"}</p>
+              <p className="text-xs text-gray-400">{user?.primaryEmailAddress?.emailAddress}</p>
+            </div>
           </div>
-          <div>
-            <p className="text-sm font-medium">John Doe</p>
-            <p className="text-xs text-gray-400">john@example.com</p>
+        </SignedIn>
+        <SignedOut>
+          <div className="px-4">
+            <SignInButton mode="modal">
+              <button className="w-full px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors text-sm font-medium">
+                Sign In
+              </button>
+            </SignInButton>
           </div>
-        </div>
+        </SignedOut>
       </div>
     </aside>
   );
